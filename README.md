@@ -16,7 +16,7 @@
     - [Windows](#windows)
 
 ## Features
-- Ionic rc0
+- Ionic RC1
 - Es-Lodash
 - [NVM](https://github.com/creationix/nvm)
 - [BetterScripts](https://github.com/benoror/better-npm-run) for npm 
@@ -28,7 +28,7 @@
     - Unit tests with karma
     - E2E tests with protractor 
     - Screenshot reporter for protractor
-    - Coverage with istanbul 
+    - ~~Coverage with istanbul~~ (see issue [#5](https://github.com/marcoturi/ionic2-boilerplate/issues/5))
     - Gitlab badge (**Use regexp**: `All files(?:\s*\|\s*\d*\.?\d+\s*){3}\|\s*((\d*\.?\d+))\s*\|` in Gitlab CI/CD pipelines to get coverage)
 - Linting
     - [SCSS Lint](https://github.com/HugoGiraudel/sass-boilerplate)
