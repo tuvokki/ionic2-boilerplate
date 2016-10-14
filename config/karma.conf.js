@@ -1,13 +1,15 @@
 'use strict';
 
 const path = require('path');
-const ts = require('rollup-plugin-typescript');
 const buble = require('rollup-plugin-buble');
 const nodeResolve = require('rollup-plugin-node-resolve');
 const angular = require('rollup-plugin-angular');
 const commonjs = require('rollup-plugin-commonjs');
 const alias = require('rollup-plugin-alias');
 const istanbul = require('rollup-plugin-istanbul');
+const typeScript = require('rollup-plugin-typescript');
+const tsConfig = require('../tsconfig.json');
+const tsc = require('typescript');
 
 module.exports = function karmaConfig(config) {
     var configuration = {
@@ -26,12 +28,24 @@ module.exports = function karmaConfig(config) {
         preprocessors: {'config/karma-shim.ts': ['rollup']},
         rollupPreprocessor: {
             context: 'this',
+            sourceMap: 'inline',
+            format: 'iife',
             plugins: [
                 angular({
                     exclude: 'node_modules/**'
                 }),
-                ts({
-                    typescript: require('../node_modules/typescript')
+                typeScript(
+                    Object.assign(tsConfig.compilerOptions, {
+                        typescript: tsc,
+                        target: 'es6',
+                        module: 'es6',
+                        declaration: false
+                    })
+                ),
+                istanbul({
+                    include: ['**/*.ts'],
+                    ignore: ['**/node_modules/**', '**/*.spec.ts', '**/config/**'],
+                    exclude: ["node_modules/**", '**/*.spec.ts', '**/config/**']
                 }),
                 alias({
                     '@angular/core/testing': path.resolve(__dirname, '../node_modules/@angular/core/testing/index.js'),
@@ -41,12 +55,7 @@ module.exports = function karmaConfig(config) {
                 }),
                 commonjs(),
                 nodeResolve({ jsnext: true, main: true, browser: true }),
-                buble(),
-                istanbul({
-                    include: ['**/*.ts'],
-                    ignore: ['**/node_modules/**'],
-                    exclude: ['**/*.spec.ts', '**/config/**']
-                })
+                buble()
             ]
         },
         port: 9876,

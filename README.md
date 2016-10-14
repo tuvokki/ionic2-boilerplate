@@ -1,14 +1,14 @@
 # IONIC 2 Boilerplate
  [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT) [![Dependency Status](https://david-dm.org/marcoturi/ionic2-boilerplate.svg)](https://david-dm.org/marcoturi/ionic2-boilerplate) [![devDependencies Status](https://david-dm.org/marcoturi/ionic2-boilerplate/dev-status.svg)](https://david-dm.org/marcoturi/ionic2-boilerplate?type=dev) ![build status](https://gitlab.com/marco_turi/ionic2-boilerplate/badges/master/build.svg) [![coverage report](https://gitlab.com/marco_turi/ionic2-boilerplate/badges/master/coverage.svg)](https://gitlab.com/marco_turi/ionic2-boilerplate/commits/master)
-<br>A ionic 2 boilerplate for starting new projects. This boilerplate will follow the best practices for angular and ionic development.
+<br>A **ionic 2** boilerplate for starting new projects. This boilerplate will follow the best practices for angular and ionic development.
 
 ## Table of Contents
 - [Features](#features)
-- [Roadmap](#Roadmap)
+- [Roadmap](#roadmap)
 - [Installation & Configuration](#installation)
     - [Pre-Install Commands](#pre-install)
     - [NPM scripts commands](#npm-scripts)
-- [Tips](#Tips)
+- [Tips](#tips)
     - [Optional Libraries](#optional-libraries)
     - [Git Workflow](#git-workflow)
     - [Useful Links](#links)
@@ -38,7 +38,7 @@
     - Automatic changelog
     - Automatic alignment of app version in config.xml from package.json through cordova hook
 
-## Roadmap
+## <a name="roadmap"></a>Roadmap
 - Automatic ipa after CI through ionic package
 - Documentation with typedoc ([waiting a new release that supports ts 2.0](https://github.com/TypeStrong/typedoc/issues/234))
 
@@ -71,7 +71,7 @@ Note: you should have ruby 2 installed to run scss-lint.
 | `android:dev`     | build .apk using dev environment vars                  |
 | `android:release` | build .apk with production environment vars            |
 
-## Tips
+## <a name="tips"></a>Tips
 ### <a name="optional-libraries"></a>Optional Libraries
 - Error logging: [Sentry](https://docs.sentry.io/clients/javascript/integrations/angular2/)
 - Database: [PouchDB](https://pouchdb.com/) or [Ionic-storage](https://github.com/driftyco/ionic-storage). Don't use localstorage as it can be deleted by OS to free memory.
