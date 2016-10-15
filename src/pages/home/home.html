@@ -1,16 +1,21 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-title>Home</ion-title>
+	</ion-navbar>
 </ion-header>
 <ion-content padding>
-  <h2 id="title">Welcome {{user.name}}!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+	<h2 id="title">Welcome {{user.name}}!</h2>
+	<hr>
+	<h2>Time</h2>
+	<h3 id="server-time">{{ serverTime }}</h3>
+	<h2>Message</h2>
+	<h3 id="server-msg">{{ message }}</h3>
+	<hr>
+	<button (click)="init()">Test</button>
+	<p>
+		This starter project comes with simple tabs-based layout for apps that are going to primarily use a Tabbed UI.
+	</p>
+	<p>
+		Take a look at the <code>src/pages/</code> directory to add or change tabs, update any existing page or create new pages.
+	</p>
 </ion-content>
