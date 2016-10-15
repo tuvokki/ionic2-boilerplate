@@ -3,24 +3,24 @@ import { NavController } from 'ionic-angular';
 // import * as io from 'socket.io-client';
 import io from 'socket.io-client';
 
-
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html',
 })
 export class HomePage {
     public user;
-    public serverTime;
-    public message;
+    public serverTime: string;
+    public message: string;
+    public status: boolean;
     public socket = null;
-    public conf = {
+    public conf: Conf = {
         connectionServer: 'http://localhost:3000/',
     };
 
     constructor(public navCtrl: NavController) {
         this.socket = io(this.conf.connectionServer);
         this.socket.on('connect', () => {
-            console.log('Connected');
+            // console.log('Connected');
         });
         this.socket.on('time', (timeString) => {
             this.serverTime = 'Server time: ' + timeString;
@@ -55,4 +55,8 @@ export class HomePage {
         this.message = 'message init';
 
     }
+}
+
+export interface Conf {
+    connectionServer: string;
 }
